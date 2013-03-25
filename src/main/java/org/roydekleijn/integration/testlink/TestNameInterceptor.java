@@ -1,7 +1,6 @@
-package filterOnTestName;
+package org.roydekleijn.integration.testlink;
 
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,27 +16,24 @@ public class TestNameInterceptor implements IMethodInterceptor {
 
 		List<IMethodInstance> result = new ArrayList<IMethodInstance>();
 		try {
-			List<String> testnamesFromTL = getTestnamesFromTestlink(8);
+			List<Integer> testnamesFromTL = getTestnamesFromTestlink(8);
 			for (IMethodInstance m : methods) {
 				Test test = m.getMethod().getConstructorOrMethod().getMethod()
 						.getAnnotation(Test.class);
-				if (testnamesFromTL.contains(test.testName())) {
+				if (testnamesFromTL.contains(Integer.parseInt(test.testName()))) {
 					result.add(m);
 				}
 			}
 
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return result;
 	}
 
-	private List<String> getTestnamesFromTestlink(int testPlanId)
+	private List<Integer> getTestnamesFromTestlink(int testPlanId)
 			throws MalformedURLException {
-		TestlinkIntegration tl = new TestlinkIntegration(new URL(
-				"http://localhost/testlink/lib/api/xmlrpc.php"),
-				"9740f3efdd12a41e2c2a21bebabdc3b3");
+		TestlinkIntegration tl = new TestlinkIntegration();
 		return tl.getTestcaseByTestplanId(testPlanId);
 	}
 }
