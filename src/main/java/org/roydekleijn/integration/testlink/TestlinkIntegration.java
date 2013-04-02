@@ -13,7 +13,7 @@ import br.eti.kinoshita.testlinkjavaapi.util.TestLinkAPIException;
 
 public class TestlinkIntegration {
 	private final static String url = "http://localhost/testlink/lib/api/xmlrpc.php";
-	private final static String devKey = "9740f3efdd12a41e2c2a21bebabdc3b3";
+	private final static String devKey = "a7f4ce3cf0c9376b0c1712b8f6f102d0";
 
 	public TestlinkIntegration() {
 
@@ -30,7 +30,6 @@ public class TestlinkIntegration {
 			TestCase finalTestcase = testlinkAPIClient.getTestCase(
 					testCase.getId(), null, null);
 			testcaseNames.add(finalTestcase.getId());
-			System.out.println("External ID" + finalTestcase.getId());
 		}
 		return testcaseNames;
 	}
@@ -46,7 +45,7 @@ public class TestlinkIntegration {
 			throws TestLinkAPIException, MalformedURLException {
 		TestLinkAPI testlinkAPIClient = new TestLinkAPI(new URL(url), devKey);
 		testlinkAPIClient.setTestCaseExecutionResult(
-				Integer.parseInt(testcaseId), null, 8, status, null, null,
+				Integer.parseInt(testcaseId), null, 4, status, null, null,
 				null, true, null, null, null, null, false);
 	}
 

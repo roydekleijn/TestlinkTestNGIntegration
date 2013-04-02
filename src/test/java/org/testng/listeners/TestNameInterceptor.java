@@ -1,9 +1,10 @@
-package org.roydekleijn.integration.testlink;
+package org.testng.listeners;
 
 import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.roydekleijn.integration.testlink.TestlinkIntegration;
 import org.testng.IMethodInstance;
 import org.testng.IMethodInterceptor;
 import org.testng.ITestContext;
@@ -16,7 +17,7 @@ public class TestNameInterceptor implements IMethodInterceptor {
 
 		List<IMethodInstance> result = new ArrayList<IMethodInstance>();
 		try {
-			List<Integer> testnamesFromTL = getTestnamesFromTestlink(8);
+			List<Integer> testnamesFromTL = getTestnamesFromTestlink(4);
 			for (IMethodInstance m : methods) {
 				Test test = m.getMethod().getConstructorOrMethod().getMethod()
 						.getAnnotation(Test.class);
