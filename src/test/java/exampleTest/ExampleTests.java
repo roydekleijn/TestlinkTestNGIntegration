@@ -3,7 +3,6 @@ package exampleTest;
 import java.lang.reflect.Method;
 import java.math.BigInteger;
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.rmi.RemoteException;
 
 import javax.xml.rpc.ServiceException;
@@ -59,8 +58,6 @@ public class ExampleTests {
           ExecutionStatus.FAILED);
 
       // Add issue to mantis or other bugtracker
-      URL url = new URL(
-          "http://localhost/mantis/api/soap/mantisconnect.php");
       MantisConnectLocator mcl = new MantisConnectLocator();
 
       mcl.setMantisConnectPortEndpointAddress("http://localhost/mantis/api/soap/mantisconnect.php");
