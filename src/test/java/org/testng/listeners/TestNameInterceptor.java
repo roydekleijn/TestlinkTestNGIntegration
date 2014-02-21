@@ -12,29 +12,36 @@ import org.testng.annotations.Test;
 
 public class TestNameInterceptor implements IMethodInterceptor {
 
-	public List<IMethodInstance> intercept(List<IMethodInstance> methods,
-			ITestContext context) {
+  List<Integer> testnamesFromTL = new ArrayList<Integer>();
 
-		List<IMethodInstance> result = new ArrayList<IMethodInstance>();
-		try {
-			List<Integer> testnamesFromTL = getTestnamesFromTestlink(4);
-			for (IMethodInstance m : methods) {
-				Test test = m.getMethod().getConstructorOrMethod().getMethod()
-						.getAnnotation(Test.class);
-				if (testnamesFromTL.contains(Integer.parseInt(test.testName()))) {
-					result.add(m);
-				}
-			}
+  public List<IMethodInstance> intercept(
+      List<IMethodInstance> methods, ITestContext context) {
 
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}
-		return result;
-	}
+    List<IMethodInstance> result = new ArrayList<IMethodInstance>();
 
-	private List<Integer> getTestnamesFromTestlink(int testPlanId)
-			throws MalformedURLException {
-		TestlinkIntegration tl = new TestlinkIntegration();
-		return tl.getTestcaseByTestplanId(testPlanId);
-	}
+    try {
+      if (testnamesFromTL.size() == 0) {
+        testnamesFromTL = getTestnamesFromTestlink(5);
+      }
+      for (IMethodInstance m : methods) {
+        Test test = m.getMethod().getConstructorOrMethod()
+            .getMethod().getAnnotation(Test.class);
+        if (testnamesFromTL.contains(Integer.parseInt(test
+            .testName()))) {
+          result.add(m);
+        }
+      }
+
+    } catch (MalformedURLException e) {
+      e.printStackTrace();
+    }
+
+    return result;
+  }
+
+  private List<Integer> getTestnamesFromTestlink(int testPlanId)
+      throws MalformedURLException {
+    TestlinkIntegration tl = new TestlinkIntegration();
+    return tl.getTestcaseByTestplanId(testPlanId);
+  }
 }

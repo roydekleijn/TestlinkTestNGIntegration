@@ -1,34 +1,36 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>testng.testing.project</groupId>
-	<artifactId>TestlinkIntegration</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<dependencies>
-		<dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<version>6.8</version>
-		</dependency>
-		<dependency>
-			<groupId>br.eti.kinoshita</groupId>
-			<artifactId>testlink-java-api</artifactId>
-			<version>1.9.4-0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.googlecode</groupId>
-			<artifactId>mantis-java-api</artifactId>
-			<version>0.0.3</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.mail</groupId>
-			<artifactId>javax.mail-api</artifactId>
-			<version>1.4.6-rc1</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.activation</groupId>
-			<artifactId>activation</artifactId>
-			<version>1.1.1</version>
-		</dependency>
-	</dependencies>
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>testng.testing.project</groupId>
+  <artifactId>TestlinkIntegration</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>6.8.7</version>
+    </dependency>
+    <dependency>
+      <groupId>br.eti.kinoshita</groupId>
+      <artifactId>testlink-java-api</artifactId>
+      <version>1.9.8-1</version>
+    </dependency>
+    <dependency>
+      <groupId>biz.futureware.mantis</groupId>
+      <artifactId>mantis-axis-soap-client</artifactId>
+      <version>1.2.15</version>
+    </dependency>
+    <!-- <dependency> <groupId>com.googlecode</groupId> <artifactId>mantis-java-api</artifactId> 
+      <version>0.0.3</version> </dependency> -->
+    <dependency>
+      <groupId>javax.mail</groupId>
+      <artifactId>javax.mail-api</artifactId>
+      <version>1.5.1</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.activation</groupId>
+      <artifactId>activation</artifactId>
+      <version>1.1.1</version>
+    </dependency>
+  </dependencies>
 </project>
