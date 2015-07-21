@@ -32,13 +32,13 @@ public class ExampleTests {
     Assert.assertFalse(true);
   }
 
-  @Test(testName = "3")
+  @Test(testName = "6")
   public void testcase2() {
     System.out.println("Testcase2");
     Assert.assertFalse(true);
   }
 
-  @Test(testName = "9")
+  @Test(testName = "8")
   public void testcase3() {
     System.out.println("Testcase3");
     Assert.assertFalse(false);
@@ -56,7 +56,7 @@ public class ExampleTests {
     } else {
       tl.setResult(test.getAnnotation(Test.class).testName(),
           ExecutionStatus.FAILED);
-
+/*
       // Add issue to mantis or other bugtracker
       MantisConnectLocator mcl = new MantisConnectLocator();
 
@@ -77,6 +77,7 @@ public class ExampleTests {
       issue.setProject(ref);
 
       mcpt.mc_issue_add("administrator", "root", issue);
+*/
     }
 
   }

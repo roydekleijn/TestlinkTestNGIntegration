@@ -21,7 +21,7 @@ public class TestNameInterceptor implements IMethodInterceptor {
 
     try {
       if (testnamesFromTL.size() == 0) {
-        testnamesFromTL = getTestnamesFromTestlink(5);
+        testnamesFromTL = getTestnamesFromTestlink(3);
       }
       for (IMethodInstance m : methods) {
         Test test = m.getMethod().getConstructorOrMethod()

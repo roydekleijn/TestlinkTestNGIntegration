@@ -12,8 +12,8 @@ import br.eti.kinoshita.testlinkjavaapi.model.TestCase;
 import br.eti.kinoshita.testlinkjavaapi.util.TestLinkAPIException;
 
 public class TestlinkIntegration {
-  private final static String url = "http://localhost/testlink/lib/api/xmlrpc/v1/xmlrpc.php";
-  private final static String devKey = "0b1e0ab03cf5653cfa896ad4e48279e1";
+  private final static String url = "http://localhost:8080/testlink/lib/api/xmlrpc/v1/xmlrpc.php";
+  private final static String devKey = "14ebeb279cb712655c53daadef839321";
 
   public TestlinkIntegration() {
 
@@ -51,7 +51,7 @@ public class TestlinkIntegration {
     TestLinkAPI testlinkAPIClient = new TestLinkAPI(
         new URL(url), devKey);
     testlinkAPIClient.setTestCaseExecutionResult(Integer
-        .parseInt(testcaseId), null, 5, status, null, null,
+        .parseInt(testcaseId), null, 3, status, null, null,
         null, true, null, null, null, null, false);
   }
 
